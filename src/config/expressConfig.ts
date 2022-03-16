@@ -16,7 +16,8 @@ server.use(function (err: Error, req: Request, res: Response, next: NextFunction
 server.listen(config.server.port, function () {
   log.info('start the server at port %o, env=%o', config.server.port, process.env.NODE_ENV);
 });
-// 动态注册路由
-require('@/controller/index');
 
 export { router };
+
+// 动态注册路由
+import '@/controller/index'
