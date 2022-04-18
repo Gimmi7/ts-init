@@ -7,7 +7,6 @@ if (!env) {
 
 let config: { [key: string]: any } = {
   server: { name: "ts-init", port: 8848, contextPath: '' },
-  pkg: "pkg.default",
   env,
 };
 

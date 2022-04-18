@@ -5,7 +5,7 @@ const glob = require('glob')
 
 module.exports = {
 
-  entry: _getEntries(), //"./src/index.ts",
+  entry: _getEntries(), 
   target: 'node',
   externalsPresets: { node: true }, //  in order to ignore built-in modules like path, fs, etc.
   externals: {
@@ -31,12 +31,9 @@ module.exports = {
   },
 
   node: {
-    // console: true,
     global: true,
-    // process: true,
     __filename: true,
     __dirname: true,
-    // setImmediate: true,
   },
 
   module: {
