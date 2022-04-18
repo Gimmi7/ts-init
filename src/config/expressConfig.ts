@@ -14,7 +14,7 @@ server.use(function (err: Error, req: Request, res: Response, next: NextFunction
 });
 // launch server
 server.listen(config.server.port, function () {
-  log.info('start the server at port %o, env=%o', config.server.port, process.env.NODE_ENV);
+  log.info('start the server at port %o, env=%o', config.server.port, config.env);
 });
 
 export { router };

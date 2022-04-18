@@ -1,4 +1,4 @@
-#! /usr/bin/sh
+#! /bin/bash
 
 env=$1
 [ -z $env ] && echo 'please input env argument: dev/test/prod' && exit 1
@@ -37,17 +37,20 @@ else
 fi
 
 # ensure tsc exists
-type tsc
-if [ "$?" != "0" ];then
-  npm install -g --force typescript && echo 'intall typescript global'
-fi
+# type tsc
+# if [ "$?" != "0" ];then
+#   npm install -g --force typescript && echo 'intall typescript global'
+# fi
 
 
 # install the dependencies
 npm install
 
+
 # compile code & run code
-tsc && cd './dist/src'
-node index.js $env $serverName &>/dev/null &
+npm run build && cd './dist'
+node src/index.js $env $serverName &>/dev/null &
 echo "success deploy ${serverName}"
 
+
+exec /bin/bash

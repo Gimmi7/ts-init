@@ -4,11 +4,11 @@ if (!env) {
   console.log("env is empty use dev");
   env = 'dev';
 }
-process.env.NODE_ENV = env;
 
 let config: { [key: string]: any } = {
   server: { name: "ts-init", port: 8848, contextPath: '' },
   pkg: "pkg.default",
+  env,
 };
 
 const res = require(`./application-${env}`);
